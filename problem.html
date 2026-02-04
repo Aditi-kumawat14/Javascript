@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mode Change</title>
+    <style>
+        button
+        {
+            border: 2px solid rgb(58, 57, 57);
+            border-radius: 20px;
+            padding: 15px;
+        }
+        .dark
+        {
+            background-color: black;
+        }
+        .light
+        {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <button id="mode">Click me!</button>
+    
+</body>
+<script>
+    let modeBtn = document.querySelector("#mode");
+    let body = document.querySelector("body");
+
+    let currMode = "light";
+
+    modeBtn.addEventListener("click" , () =>
+    {
+        if(currMode == "light")
+        {
+          currMode = "dark"; 
+          body.classList.add("dark"); 
+          body.classList.remove("light"); 
+        }
+        else if(currMode == "dark")
+        {
+            currMode = "light";
+            body.classList.add("light"); 
+            body.classList.remove("dark"); 
+
+
+        }
+
+        console.log(currMode);
+    });
+</script>
+</html>
